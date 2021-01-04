@@ -1,14 +1,18 @@
 import React from 'react';
 import ResumePagePDF from './ResumePagePDF';
+import {Document, Page} from 'react-pdf';
 //import { sampleBase64pdf } from './sampleBase64pdf';
-//import samplePDF from './sivamResume.pdf';
+import PDFViewer from 'pdf-viewer-reactjs'
+import samplePDF from './sivamResume.pdf';
 
 const ResumeImage = () => {
   return (
-    <div>
-      <ResumePagePDF pdf='http://www.pdf995.com/samples/pdf.pdf' />
-    </div>
+    <Document file={samplePDF}>
+      <Page pageNumber={1} />
+    </Document>
   );
 };
 
 export default ResumeImage;
+
+

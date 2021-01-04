@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Document, Page } from 'react-pdf';
 
-export default function ResumePage({ pdf }) {
+export default function ResumePage(props) {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1); //setting 1 to show fisrt page
 
@@ -22,10 +22,12 @@ export default function ResumePage({ pdf }) {
     changePage(1);
   }
 
+  const { pdf } = props;
+
   return (
     <div>
       <Document
-        file='https://documentcloud.adobe.com/link/track?uri=urn:aaid:scds:US:462e0b69-acad-451d-b0f8-145005558396'
+        file={pdf}
         options={{ workerSrc: 'pdf.worker.js' }}
         onLoadSuccess={onDocumentLoadSuccess}
       >
