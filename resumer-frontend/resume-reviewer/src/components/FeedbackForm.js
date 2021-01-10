@@ -3,29 +3,76 @@
 */
 
 import React from 'react';
-import { Container, Form, Button } from 'react-bootstrap';
+import {
+  Container,
+  Form,
+  Button,
+  Row,
+  Col,
+  InputGroup,
+  FormControl,
+} from 'react-bootstrap';
 
 const FeedbackForm = () => {
   return (
-    <div className='homescreen__feedback__form'>
+    <div
+      className='homescreen__feedback__form'
+      style={{ marginTop: '20px', marginBottom: '20px' }}
+    >
       <Container>
         <Form>
-          <Form.Group controlId='formBasicEmail'>
-            <Form.Label>Email address</Form.Label>
-            <Form.Control type='email' placeholder='Enter email' />
-            <Form.Text className='text-muted'>
-              We'll never share your email with anyone else.
-            </Form.Text>
+          {/* First Part */}
+          <Form.Group controlId='exampleForm.ControlSelect2'>
+            <Form.Label>Overall Rating</Form.Label>
+            <Form.Control as='select' multiple>
+              <option>1 - Needs Work</option>
+              <option>2 - Below Average</option>
+              <option>3 - Average</option>
+              <option>4 - Above Average</option>
+              <option>5 - Exceptional</option>
+            </Form.Control>
           </Form.Group>
-
-          <Form.Group controlId='formBasicPassword'>
-            <Form.Label>Password</Form.Label>
-            <Form.Control type='password' placeholder='Password' />
+          {/* Second Part */}
+          <Form.Group as={Row}>
+            <Form.Label as='legend' column sm={4}>
+              Strengths
+            </Form.Label>
+            <Col sm={8}>
+              <Form.Check
+                label='Education Section'
+                name='formHorizontalRadios'
+                id='formHorizontalRadios1'
+              />
+              <Form.Check
+                label='Experience Section'
+                name='formHorizontalRadios'
+                id='formHorizontalRadios2'
+              />
+              <Form.Check
+                label='Technical Projects Section'
+                name='formHorizontalRadios'
+                id='formHorizontalRadios3'
+              />
+              <Form.Check
+                label='Layout/Structure'
+                name='formHorizontalRadios'
+                id='formHorizontalRadios3'
+              />
+              <Form.Check
+                label='Overall Wording/Grammar'
+                name='formHorizontalRadios'
+                id='formHorizontalRadios3'
+              />
+            </Col>
           </Form.Group>
-          <Form.Group controlId='formBasicCheckbox'>
-            <Form.Check type='checkbox' label='Check me out' />
-          </Form.Group>
-          <Button variant='primary' type='submit'>
+          {/* Third Part */}
+          <InputGroup>
+            <InputGroup.Prepend>
+              <InputGroup.Text>Feedback</InputGroup.Text>
+            </InputGroup.Prepend>
+            <FormControl as='textarea' aria-label='With textarea' />
+          </InputGroup>
+          <Button style={{ marginTop: '20px' }} variant='primary' type='submit'>
             Submit
           </Button>
         </Form>

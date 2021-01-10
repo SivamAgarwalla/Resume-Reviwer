@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import ResumeImage from '../components/ResumeImage';
+import ResumePage from '../components/ResumePage';
 import FeedbackForm from '../components/FeedbackForm';
 
 const HomeScreen = () => {
@@ -8,7 +8,7 @@ const HomeScreen = () => {
     <div className='homescreen'>
       <Row>
         <Col sm={8}>
-          <ResumeImage />
+          <ResumePage />
         </Col>
         <Col sm={4}>
           <FeedbackForm />
